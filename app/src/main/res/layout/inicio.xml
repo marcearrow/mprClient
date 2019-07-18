@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#40C8BF">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:background="#FFFFFF">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="40dp"
+                android:background="@drawable/logomprdecoracion"
+                android:contentDescription="@string/txtbuttonInicio" />
+
+
+            <TextView
+                android:id="@+id/Inicio_text_id"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="2dp"
+                android:gravity="center"
+                android:textColor="#000001"
+                android:textSize="26sp"
+                app:fontFamily="cursive"
+                android:text="@string/txtInicio"
+                />
+
+            <TextView
+                android:id="@+id/Inicio_text2_id"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="2dp"
+                android:gravity="center"
+                android:textColor="#000001"
+                android:textSize="26sp"
+                app:fontFamily="cursive"
+                android:text="@string/txtInicio2"/>
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_gravity="center"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/txtbuttonInicio"
+                android:background="#40C3FE"
+                android:textColor="#FFFFFF"
+                android:onClick="Comenzar"/>
+
+
+        </LinearLayout>
+
+</LinearLayout>

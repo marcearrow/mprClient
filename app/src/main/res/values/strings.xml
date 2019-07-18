@@ -1,0 +1,10 @@
+<resources>
+  <string name="app_name">MPR</string>
+  <string name="txtInicio">Hola, felicitaciones por su compromiso y bienvenidos a la guía decorativa de MPR Ambientación de Eventos</string>
+  <string name="txtInicio2">Los invito a decorar el día más especial de sus vidas</string>
+  <string name="txtbuttonInicio">Comencemos</string>
+  <string name="txtbuttonFavorito">Guardar</string>
+  <string name="itm_favoritos">Decoraciones Guardadas</string>
+  <string name="txtbuttonDetalleFavorito">Borrar</string>
+  <string name="texto">Texto</string>
+</resources>
