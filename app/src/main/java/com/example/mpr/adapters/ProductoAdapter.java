@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mpr.R;
 import com.example.mpr.models.Producto;
 import com.example.mpr.utils.ImageLoader;
-import com.example.mpr.views.ProductoDetalle;
+import com.example.mpr.controlers.ProductoDetalle;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
@@ -46,7 +46,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.viewHo
   public void onBindViewHolder(@NonNull final viewHolderEventos holder, int position) {
     final Producto producto = productoLista.get(position);
     final String idProducto = producto.getId();
-    final String nombreProducto= producto.getNombre();
+    final String nombreProducto = producto.getNombre();
 
     holder.textView.setText(nombreProducto);
     if (producto.getImgUrl() != null) {

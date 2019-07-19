@@ -15,9 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mpr.R;
 import com.example.mpr.models.Etiqueta;
 import com.example.mpr.utils.ImageLoader;
-import com.example.mpr.views.ProductoActivity;
-import com.example.mpr.views.Categoria;
-import com.example.mpr.views.Tematica;
+import com.example.mpr.controlers.ProductoActivity;
+import com.example.mpr.controlers.Categoria;
+import com.example.mpr.controlers.Tematica;
 import java.util.ArrayList;
 
 public class EtiquetaAdapter extends RecyclerView.Adapter<EtiquetaAdapter.viewHolderEventos> {

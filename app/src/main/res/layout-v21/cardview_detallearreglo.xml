@@ -28,11 +28,11 @@
             android:id="@+id/detalleArreglo_img_id"
             android:layout_width="match_parent"
             android:layout_height="470dp"
+          
           android:adjustViewBounds="false"
           android:nestedScrollingEnabled="false"
           android:scaleType="fitXY"
-            android:layout_margin="10dp"
-          tools:targetApi="lollipop"/>
+            android:layout_margin="10dp"/>
 
 
         <TextView

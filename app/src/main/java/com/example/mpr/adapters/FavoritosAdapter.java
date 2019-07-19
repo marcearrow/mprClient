@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.example.mpr.R;
 import com.example.mpr.models.Producto;
-import com.example.mpr.views.DetalleFavorito;
+import com.example.mpr.controlers.DetalleFavorito;
 import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
@@ -35,7 +35,7 @@ public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.Prod
     @NonNull
     @Override
     public ProductosViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view=LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.favorito,null,false);
+        View view=LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.favorito,viewGroup,false);
 
         return new ProductosViewHolder(view);
 
@@ -43,8 +43,9 @@ public class FavoritosAdapter extends RecyclerView.Adapter<FavoritosAdapter.Prod
 
     @Override
     public void onBindViewHolder(@NonNull ProductosViewHolder productosViewHolder, int i) {
+        Producto producto = listaProductos.get(i);
 
-        id=listaProductos.get(i).getImgUrl();
+        id=producto.getImgUrl();
         Picasso.get().load(listaProductos.get(i).getImgUrl()).into(productosViewHolder.ImgUrl);
         productosViewHolder.descripcion.setText(listaProductos.get(i).getNombre());
         productosViewHolder.cardView.setOnClickListener(new View.OnClickListener() {

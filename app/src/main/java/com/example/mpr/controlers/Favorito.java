@@ -1,8 +1,11 @@
-package com.example.mpr.views;
+package com.example.mpr.controlers;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -50,17 +53,17 @@ public class Favorito extends AppCompatActivity {
     FavoritosAdapter adapter = new FavoritosAdapter(listaFavoritos);
     mRecyclerView.setAdapter(adapter);
 
-
   }
 
 
   private void consultarListaFavoritos() {
     SQLiteDatabase db = conn.getReadableDatabase();
-    Producto producto = null;
+
     Cursor cursor = db.rawQuery("SELECT * FROM " + Utilidades.tablaFavoritos, null);
 
     while (cursor.moveToNext()) {
-      producto = new Producto(null, cursor.getString(0), cursor.getString(1));
+      Producto producto = new Producto(null, cursor.getString(0), cursor.getString(1));
+
 
       listaFavoritos.add(producto);
     }

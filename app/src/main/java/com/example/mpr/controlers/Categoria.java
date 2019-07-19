@@ -1,4 +1,4 @@
-package com.example.mpr.views;
+package com.example.mpr.controlers;
 
 import android.content.Intent;
 import android.view.Menu;

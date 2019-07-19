@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mpr.R;
-import com.example.mpr.views.Tematica;
+import com.example.mpr.controlers.Tematica;
 import com.squareup.picasso.Picasso;
 
 public class ViewHolder extends RecyclerView.ViewHolder {

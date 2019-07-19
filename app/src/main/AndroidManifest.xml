@@ -11,21 +11,21 @@
       android:roundIcon="@mipmap/ic_launcher_round"
       android:supportsRtl="true"
       android:theme="@style/AppTheme">
-        <activity android:name=".views.Categoria">
+        <activity android:name=".controlers.Categoria">
         </activity>
-        <activity android:name=".views.Inicio">
+        <activity android:name=".controlers.Inicio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".views.Evento"/>
-        <activity android:name=".views.Tematica"/>
-        <activity android:name=".views.ProductoActivity"/>
-        <activity android:name=".views.ProductoDetalle"/>
-        <activity android:name=".views.Favorito"/>
-        <activity android:name=".views.DetalleFavorito"/>
+        <activity android:name=".controlers.Evento"/>
+        <activity android:name=".controlers.Tematica"/>
+        <activity android:name=".controlers.ProductoActivity"/>
+        <activity android:name=".controlers.ProductoDetalle"/>
+        <activity android:name=".controlers.Favorito"/>
+        <activity android:name=".controlers.DetalleFavorito"/>
     </application>
 
 </manifest>

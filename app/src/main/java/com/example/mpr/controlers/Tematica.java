@@ -1,4 +1,4 @@
-package com.example.mpr.views;
+package com.example.mpr.controlers;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,12 +17,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
-public class Evento extends AppCompatActivity {
+public class Tematica extends AppCompatActivity {
 
   RecyclerView mRecyclerView;
   FirebaseDatabase mFirebaseDatabase;
   DatabaseReference mRef;
-  String id;
+  String idEvento;
+  String etiqueta="tematica";
 
   /**
    * Se crea el Activity Evento
@@ -32,17 +33,25 @@ public class Evento extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.recyclerview);
 
+    idEvento=getIntent().getStringExtra("id");
+    //ActionBar
     ActionBar actionBar = getSupportActionBar();
-    actionBar.setTitle("Elige tu Evento");
+    //Título ActionBar
+    actionBar.setTitle("Elige la Temática");
+
+    //Boton para volver atras en ActionBar
+    actionBar.setDisplayHomeAsUpEnabled(true);
+    actionBar.setDisplayShowHomeEnabled(true);
 
     mRecyclerView = findViewById(R.id.recyclerview_id);
     mRecyclerView.setHasFixedSize(true);
 
-    mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1));
+    mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
     mFirebaseDatabase = FirebaseDatabase.getInstance();
-    mRef = mFirebaseDatabase.getReference("eventos");
-    ListaEventos();
+    mRef = mFirebaseDatabase.getReference("tematicas");
+
+    ListaTematicas();
 
   }
 
@@ -61,16 +70,24 @@ public class Evento extends AppCompatActivity {
     return super.onOptionsItemSelected(menuItem);
   }
 
-  private void ListaEventos() {
+
+  private void ListaTematicas() {
     FirebaseHelper firebaseHelper = new FirebaseHelper(mRef);
-    firebaseHelper.ListaEventos(new FirebaseCallbackListas() {
+    firebaseHelper.ListarConRelacion(new FirebaseCallbackListas() {
       @Override
-      public void onCallback(ArrayList<Etiqueta> listaDeEventos) {
-        EtiquetaAdapter eventoAdapter = new EtiquetaAdapter(R.layout.cardview, listaDeEventos,
-            Evento.this);
-        mRecyclerView.setAdapter(eventoAdapter);
+      public void onCallback(ArrayList<Etiqueta> listaDeTematicas) {
+        EtiquetaAdapter tematicaAdapter = new EtiquetaAdapter(R.layout.cardview, listaDeTematicas,
+            Tematica.this);
+        mRecyclerView.setAdapter(tematicaAdapter);
       }
-    });
+    }, idEvento,etiqueta);
+  }
+
+
+  @Override
+  public boolean onSupportNavigateUp() {
+    onBackPressed();
+    return true;
   }
 
 }
